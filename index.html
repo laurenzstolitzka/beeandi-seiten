@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mangole Clips Studio</title>
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+/* Layout: eine ruhige Textspalte, Navigation oben, Abschnitte mit Sprungmarken (TikTok-Seite, getrennt von der Google-Seite) */
+:root {
+  --bg: #f6f6fb; --fg: #1d1b2e; --muted: #5d5a75; --line: #dddbea; --accent: #6a4fd6; --card: #ffffff;
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --text: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #14131f; --fg: #ecebf5; --muted: #a9a6c2; --line: #2e2c42; --accent: #a48ff2; --card: #1c1a2b; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #14131f; --fg: #ecebf5; --muted: #a9a6c2; --line: #2e2c42; --accent: #a48ff2; --card: #1c1a2b; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 16px/1.65 var(--text); }
+.wrap { max-width: 44rem; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+header { display: grid; gap: 12px; }
+.marke { font: 700 13px/1 var(--display); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 700 clamp(28px, 6vw, 40px)/1.15 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 700 22px/1.3 var(--display); margin: 0 0 8px; }
+h3 { font: 600 15px/1.4 var(--text); margin: 18px 0 4px; }
+p, li { margin: 0 0 10px; color: var(--fg); }
+.leise { color: var(--muted); font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 20px; border-block: 1px solid var(--line); padding-block: 12px; }
+nav a, a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; scroll-margin-top: 16px; }
+ul { padding-left: 20px; margin: 0 0 10px; }
+</style>
+
+<div class="wrap">
+  <header><span class="marke">Mangole Clips</span><h1>Mangole Clips Studio</h1><p>A private tool of Bee &amp; I Productions e.U. (Vienna) that prepares short gaming clips and saves them as drafts in the operator's own TikTok account. It is not offered to other users.</p><nav aria-label="Pages"><a href="/">About</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></nav></header>
+  <section id="about">
+    <h2>About</h2>
+    <p>Mangole Clips Studio runs locally on the operator's own computer. It finds highlight moments in streams of creators who allow clipping (for example through official clipping campaigns such as Content Rewards), cuts vertical clips with subtitles and writes the captions. Every clip is reviewed and approved by the operator before anything leaves the computer.</p>
+    <p class="leise">Operated by Bee &amp; I Productions e.U., Vienna, Austria. See the legal notice below.</p>
+  </section>
+  <section id="how">
+    <h2>How it works with TikTok</h2>
+    <ul>
+      <li>The operator connects the operator's own TikTok account once (TikTok Login Kit).</li>
+      <li>After the operator approves a clip locally, the tool uploads that one video file to the inbox of the operator's own account as a draft (Content Posting API, scope <code>video.upload</code>).</li>
+      <li>The operator opens the TikTok app, checks the draft and publishes it personally. The tool never publishes by itself.</li>
+      <li>The tool only reads the display name of the connected account (scope <code>user.info.basic</code>) to show which account is connected.</li>
+    </ul>
+  </section>
+  <section id="impressum">
+    <h2>Legal notice (Impressum)</h2>
+    <p>Bee &amp; I Productions e.U.<br>Owner: Laurenz Stolitzka<br>Graf-Starhemberg-Gasse 2B/4<br>1040 Wien, Austria</p>
+    <p>Company register number: FN 598173t<br>Register court: Handelsgericht Wien<br>Line of business: film production</p>
+  </section>
+</div>
+</body></html>
